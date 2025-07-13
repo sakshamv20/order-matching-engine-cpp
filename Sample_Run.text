@@ -1,0 +1,15 @@
+Welcome to the C++ Order Matching Engine
+Enter orders in format: buy/sell price quantity
+Type 'exit' to quit.
+
+Order> buy 100 10
+Order> sell 95 5
+Matched: Buy ID 1 with Sell ID 2 | Price: 95 | Quantity: 5
+
+Order> sell 100 5
+Matched: Buy ID 1 with Sell ID 3 | Price: 100 | Quantity: 5
+
+Order> exit
+
+Exiting Order Matching Engine. Thank you!
+

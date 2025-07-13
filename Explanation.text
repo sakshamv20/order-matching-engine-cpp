@@ -1,0 +1,100 @@
+We're simulating how a **stock exchange** works — people place **buy** and **sell** orders, 
+and if their prices match,the trade happens.
+
+
+💻 Program Output:
+
+
+Welcome to the C++ Order Matching Engine
+Enter orders in format: buy/sell price quantity
+Type 'exit' to quit.
+
+
+The program welcomes the user and tells them to enter an order like:
+
+
+buy 100 10
+
+
+Which means:
+
+> "I want to **buy 10 shares** at **Rs. 100** each."
+
+
+
+ 📝 Order 1: `buy 100 10`
+
+* This is a **buy order**.
+* User wants to **buy 10 units** at **price Rs. 100**.
+* There are no sell orders yet →  nothing to match.
+* So, this order is saved in the **Buy Order Book** and waits.
+
+---
+
+📝 Order 2: `sell 95 5`
+
+* Now the user wants to **sell 5 units at Rs. 95**.
+* The system checks:
+
+  * Is there any buy order **willing to pay ≥ 95**?
+  * Yes! We already have: **Buy Order at Rs. 100**
+* ✅ So trade happens!
+
+
+✅ Matched: Buy ID 1 with Sell ID 2 | Price: 95 | Quantity: 5
+
+
+🟢 Meaning:
+
+* Buy order ID 1 (for 10 units @ Rs.100) gets **5 units** from sell order ID 2 (@ Rs.95).
+* **Price used = seller's price (95)**
+* Buy order now has **5 units left** to buy.
+
+ 📝 Order 3: `sell 100 5`
+
+* User wants to **sell 5 units at Rs. 100**
+* System checks again:
+
+  * Is there any buy order ≥ 100?
+  * Yes! Buy Order ID 1 still has 5 units left, at Rs.100.
+* ✅ Trade happens!
+
+
+✅ Matched: Buy ID 1 with Sell ID 3 | Price: 100 | Quantity: 5
+
+
+🟢 Meaning:
+
+* Remaining 5 units of Buy Order 1 are now matched.
+* Both orders (buy and sell) are **fully completed**.
+
+📝 Order 4: `exit`
+
+* User types `exit` → Program ends
+
+
+Exiting Order Matching Engine. Thank you!
+
+
+
+
+ FINAL SUMMARY:
+
+| Order Type | Price  | Quantity | Action Taken                          |
+| ---------- | ------ | -------- | ------------------------------------- |
+| Buy 100 10 | Rs.100 | 10 units | Matched with two sell orders          |
+| Sell 95 5  | Rs.95  | 5 units  | Matched with buy order (partially)    |
+| Sell 100 5 | Rs.100 | 5 units  | Matched with buy order (completes it) |
+
+
+
+Key Points to Remember
+
+| Concept         | Meaning                                            |
+| ----------------| ---------------------------------------------------|
+| Buy Order       | You want to purchase shares at a certain max price |
+| Sell Order      | You want to sell shares at a certain min price     |
+| Match Condition | Buy Price ≥ Sell Price                             |
+| FIFO Logic      | First come, first served — if same price           |
+| Matched Price   | Always uses **seller's price** in most exchanges   |
+
