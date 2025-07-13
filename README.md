@@ -43,6 +43,13 @@ exit
 ✅ Matched: Buy ID 1 with Sell ID 2 | Price: 95 | Quantity: 5
 ✅ Matched: Buy ID 1 with Sell ID 3 | Price: 100 | Quantity: 5
 
+## 🔮 Future Enhancements
+- Add support for cancel/edit orders
+- Introduce market order types
+- Log trades to CSV/text files
+- Display live order book snapshot
+- Performance benchmarks (time/memory)
+
 ## 🎯 Concepts Covered
 C++ Structs and STL Containers (map, queue)
 
